@@ -667,7 +667,9 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .slider-main__slide {
   position: relative;
-  pointer-events: none
+  pointer-events: none;
+  border-radius: .9375rem;
+  overflow: hidden
 }
 .slider-main__image {
   height: 31.25rem
