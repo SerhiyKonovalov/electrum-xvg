@@ -4252,7 +4252,7 @@
                             document.documentElement.classList.contains("menu-open") ? menuClose() : null;
                         }
                     } else gotoblock_gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
-                    if ([ "/index", "/index.html" ].includes(window.location.pathname)) e.preventDefault();
+                    if ([ "/home", "/home.html" ].includes(window.location.pathname)) e.preventDefault();
                 }
             } else if (e.type === "watcherCallback" && e.detail) {
                 const entry = e.detail.entry;
