@@ -193,7 +193,7 @@ body::-webkit-scrollbar-thumb:hover {
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 1.4;
-  letter-spacing: .03125rem
+  letter-spacing: .09375rem
 }
 .header-modifier__title span {
   color: #5e72ca;
@@ -815,12 +815,18 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .advantages {
   background: linear-gradient(109.6deg,#4d5ea9 6.42%,#a6b2f7 97.82%);
-  padding-block: 6.25rem;
+  padding-block: 5.625rem 6.25rem;
   position: relative;
   z-index: 2
 }
 .advantages__container {
   text-align: center
+}
+.advantages__header {
+  text-transform: uppercase
+}
+.advantages__header:not(:last-child) {
+  margin-bottom: 2.8125rem
 }
 .advantages__cards {
   display: grid;
