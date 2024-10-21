@@ -7,7 +7,7 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=1130px, initial-scale=1.0">
 	<meta name="author" content="electrum-dash.org">
-	<link rel="stylesheet" href="css/style.min.css?_v=20241019105630">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241021111238">
 	<link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="favicon.ico">
 	<link rel="icon" type="image/webp" sizes="16x16" href="img/favicon/16x16.webp">
 	<link rel="icon" type="image/webp" sizes="32x32" href="img/favicon/32x32.webp">
@@ -66,7 +66,7 @@
 		</header>
 		<main class="page">
 			<section class="hero" id="hero" itemscope itemtype="https://schema.org/Article">
-				<div class="hero__container _container">
+				<div class="hero__container">
 					<div class="hero__body">
 						<div class="hero__image">
 							<img src="img/hero/image.webp" alt="Electrum Verge image">
@@ -104,86 +104,89 @@
 						<div class="main-slider__slider slider-main">
 							<div class="slider-main__body">
 								<div class="slider-main__wrapper swiper-wrapper">
-									<div class="slider-main__slide swiper-slide">
+									<article class="slider-main__slide swiper-slide" itemscope itemtype="https://schema.org/Article">
 										<div class="slider-main__image">
-											<img src="img/about/01.webp" alt="Slide image">
+											<img src="img/about/01.webp" alt="Slide image" itemprop="image">
 										</div>
 										<div data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-main__content slider-main__content--left">
 											<div class="slider-main__title">
-												<h4>Lorem ipsum</h4>
+												<h3 itemprop="headline">Lorem ipsum</h3>
 											</div>
-											<div class="slider-main__text">
+											<div class="slider-main__text" itemprop="description">
 												<p>Lorem ipsum, dolor sit amet consectetu amet consectetur dsr adipisicing.</p>
 											</div>
 										</div>
-									</div>
-									<div class="slider-main__slide swiper-slide">
+									</article>
+									<article class="slider-main__slide swiper-slide" itemscope itemtype="https://schema.org/Article">
 										<div class="slider-main__image">
-											<img src="img/about/02.webp" alt="Slide image">
+											<img src="img/about/02.webp" alt="Slide image" itemprop="image">
 										</div>
 										<div data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-main__content">
 											<div class="slider-main__title">
-												<h4>Lorem ipsum dolor</h4>
+												<h3 itemprop="headline">Lorem ipsum dolor</h3>
 											</div>
-											<div class="slider-main__text">
+											<div class="slider-main__text" itemprop="description">
 												<p>Lorem ipsum, dolor sit amet consectetu amet consectetur dsr adipisicing</p>
 											</div>
 										</div>
-									</div>
-									<div class="slider-main__slide swiper-slide">
+									</article>
+									<article class="slider-main__slide swiper-slide" itemscope itemtype="https://schema.org/Article">
 										<div class="slider-main__image">
-											<img src="img/about/03.webp" alt="Slide image">
+											<img src="img/about/03.webp" alt="Slide image" itemprop="image">
 										</div>
 										<div data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-main__content">
 											<div class="slider-main__title">
-												<h4>Lorem ipsum dolor</h4>
+												<h3 itemprop="headline">Lorem ipsum dolor</h3>
 											</div>
-											<div class="slider-main__text">
+											<div class="slider-main__text" itemprop="description">
 												<p>Lorem ipsum, dolor sit amet consectetu amet consectetur dsr adipisicing.</p>
 											</div>
 										</div>
-									</div>
-									<div class="slider-main__slide swiper-slide">
+									</article>
+									<article class="slider-main__slide swiper-slide" itemscope itemtype="https://schema.org/Article">
 										<div class="slider-main__image">
-											<img src="img/about/04.webp" alt="Slide image">
+											<img src="img/about/04.webp" alt="Slide image" itemprop="image">
 										</div>
 										<div data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-main__content">
 											<div class="slider-main__title">
-												<h4>Lorem ipsum</h4>
+												<h3 itemprop="headline">Lorem ipsum</h3>
 											</div>
-											<div class="slider-main__text">
+											<div class="slider-main__text" itemprop="description">
 												<p>Lorem ipsum, dolor sit amet consectetu amet consectetur dsr adipisicing</p>
 											</div>
 										</div>
-									</div>
-									<div class="slider-main__slide swiper-slide">
+									</article>
+									<article class="slider-main__slide swiper-slide" itemscope itemtype="https://schema.org/Article">
 										<div class="slider-main__image">
-											<img src="img/about/05.webp" alt="Slide image">
+											<img src="img/about/05.webp" alt="Slide image" itemprop="image">
 										</div>
 										<div data-swiper-parallax-opacity="0" data-swiper-parallax-x="-100%" class="slider-main__content">
 											<div class="slider-main__title">
-												<h4>Lorem ipsum dolor</h4>
+												<h3 itemprop="headline">Lorem ipsum dolor</h3>
 											</div>
-											<div class="slider-main__text">
+											<div class="slider-main__text" itemprop="description">
 												<p>Lorem ipsum, dolor sit amet consectetu amet consectetur dsr adipisicing</p>
 											</div>
 										</div>
-									</div>
+									</article>
 								</div>
 							</div>
 							<div class="slider-main__controls controls-slider-main">
 								<div class="controls-slider-main__dotts"></div>
 								<div class="controls-slider-main__arrows slider-arrows">
-									<button type="button" class="slider-arrow slider-arrow_prev _icon-arrow-down"></button>
-									<button type="button" class="slider-arrow slider-arrow_next _icon-arrow-down"></button>
+									<button type="button" class="slider-arrow slider-arrow_prev _icon-arrow-down" aria-label="previous slide"></button>
+									<button type="button" class="slider-arrow slider-arrow_next _icon-arrow-down" aria-label="next slide"></button>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<div class="advantages" id="advantages" data-watch="navigator">
+			<section class="advantages" id="advantages" data-watch="navigator">
 				<div class="advantages__container">
+					<div class="advantages__header header-modifier">
+						<h2 class="header-modifier__title">Advantages</h2>
+					</div>
 					<div class="advantages__cards">
 						<article class="advantages__card" itemscope itemtype="https://schema.org/Article">
 							<div class="advantages__body">
@@ -229,7 +232,7 @@
 						</article>
 					</div>
 				</div>
-			</div>
+			</section>
 			<article class="community" id="community" data-watch="navigator" itemscope itemtype="https://schema.org/Article">
 				<div class="community__container">
 					<div class="community__body">
@@ -322,15 +325,15 @@
 						<h2 class="downloads__title">Downloads</h2>
 						<div class="downloads__items">
 							<a href="#" class="downloads__item item-downloads item-downloads--windows">
-								<img src="img/download/window.svg" class="item-downloads__icon" alt="icon Windows">
+								<img src="img/download/window.svg" class="item-downloads__icon" alt="Windows icon">
 								<div class="item-downloads__label"><strong>Download</strong><br> for Windows</div>
 							</a>
 							<a href="#" class="downloads__item item-downloads item-downloads--macos">
-								<img src="img/download/apple.svg" class="item-downloads__icon" alt="icon macOS">
-								<div class="item-downloads__label"><strong>Download</strong><br> for macOS</div>
+								<img src="img/download/apple.svg" class="item-downloads__icon" alt="MacOS icon">
+								<div class="item-downloads__label"><strong>Download</strong><br> for MacOS</div>
 							</a>
 							<a href="#" class="downloads__item item-downloads item-downloads--linux">
-								<img src="img/download/linux.svg" class="item-downloads__icon" alt="icon Linux">
+								<img src="img/download/linux.svg" class="item-downloads__icon" alt="Linux icon">
 								<div class="item-downloads__label"><strong>Download</strong><br> for Linux</div>
 							</a>
 						</div>
@@ -388,7 +391,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241019105630"></script>
+	<script src="js/app.min.js?_v=20241021111238"></script>
 </body>
 
 </html>

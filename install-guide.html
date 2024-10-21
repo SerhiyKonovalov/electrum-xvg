@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-	<title>Isnstall Guide - Electrum Verge</title>
+	<title>Install Guide for Verge Wallet | Electrum XVG</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=1130px, initial-scale=1.0">
 	<meta name="author" content="electrum-dash.org">
-	<link rel="stylesheet" href="css/style.min.css?_v=20241019105630">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241021111238">
 	<link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="favicon.ico">
 	<link rel="icon" type="image/webp" sizes="16x16" href="img/favicon/16x16.webp">
 	<link rel="icon" type="image/webp" sizes="32x32" href="img/favicon/32x32.webp">
@@ -17,20 +17,20 @@
 	<link rel="icon" type="image/webp" sizes="400x400" href="img/favicon/400x400.webp">
 	<link rel="canonical" href="https://electrum-xvg.org/install-guide.html">
 	<meta name="robots" content="follow, index, max-snippet:-1, max-image-preview:large">
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta name="description" content="Learn how to quickly install and set up Electrum XVG with this simple guide. Start managing your Verge cryptocurrency securely and efficiently today.">
+	<meta name="keywords" content="Electrum XVG install, Verge wallet setup, Verge wallet installation, how to install Verge wallet, Electrum XVG guide, install Verge wallet">
 	<meta property="og:site_name" content="electrum-dash.org">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="https://electrum-xvg.org/install-guide.html">
-	<meta property="og:title" content="Isnstall Guide - Electrum Verge">
-	<meta property="og:description" content="">
+	<meta property="og:title" content="Install Guide for Verge Wallet | Electrum XVG">
+	<meta property="og:description" content="Learn how to quickly install and set up Electrum XVG with this simple guide. Start managing your Verge cryptocurrency securely and efficiently today.">
 	<meta property="og:image" content="img/favicon/400x400.webp">
 	<meta property="og:image:width" content="400">
 	<meta property="og:image:height" content="400">
 	<meta property="og:image:alt" content="Electrum Digital Cash logo">
 	<meta property="og:image:type" content="image/webp">
-	<meta property="twitter:title" content="Isnstall Guide - Electrum Verge">
-	<meta property="twitter:description" content="">
+	<meta property="twitter:title" content="Install Guide for Verge Wallet | Electrum XVG">
+	<meta property="twitter:description" content="Learn how to quickly install and set up Electrum XVG with this simple guide. Start managing your Verge cryptocurrency securely and efficiently today.">
 	<meta property="twitter:image" content="img/favicon/400x400.webp">
 	<meta property="twitter:card" content="summary">
 </head>
@@ -65,7 +65,7 @@
 			</div>
 		</header>
 		<main class="page">
-			<section class="install-guide markdown-body entry-content container-lg" itemprop="text">
+			<section class="install-guide markdown-body entry-content container-lg">
 				<div class="install-guide__container">
 					<div class="markdown-heading" dir="auto">
 						<h1 tabindex="-1" class="heading-element" dir="auto">HOWTO</h1>
@@ -77,34 +77,32 @@
 						successfully on MacOS and DragonFlyBSD. It won't run out-of-the-box
 						on Windows, but the changes required to make it do so should be
 						small - pull requests are welcome.</p>
-					<markdown-accessiblity-table data-catalyst="">
-						<table>
-							<thead valign="bottom">
-								<tr>
-									<th>Package</th>
-									<th>Notes</th>
-								</tr>
-							</thead>
-							<tbody valign="top">
-								<tr>
-									<td>Python3</td>
-									<td>ElectrumX uses asyncio. Python version &gt;= 3.8 is
-										<strong>required</strong>.
-									</td>
-								</tr>
-								<tr>
-									<td><a href="https://pypi.python.org/pypi/aiohttp" rel="nofollow">aiohttp</a></td>
-									<td>Python library for asynchronous HTTP. Version &gt;=
-										2.0 required.</td>
-								</tr>
-								<tr>
-									<td>DB Engine</td>
-									<td>A database engine package is required; two are
-										supported (see <a href="#database-engine">Database Engine</a> below).</td>
-								</tr>
-							</tbody>
-						</table>
-					</markdown-accessiblity-table>
+					<table>
+						<thead>
+							<tr>
+								<th>Package</th>
+								<th>Notes</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Python3</td>
+								<td>ElectrumX uses asyncio. Python version &gt;= 3.8 is
+									<strong>required</strong>.
+								</td>
+							</tr>
+							<tr>
+								<td><a href="https://pypi.python.org/pypi/aiohttp" rel="nofollow">aiohttp</a></td>
+								<td>Python library for asynchronous HTTP. Version &gt;=
+									2.0 required.</td>
+							</tr>
+							<tr>
+								<td>DB Engine</td>
+								<td>A database engine package is required; two are
+									supported (see <a href="#database-engine">Database Engine</a> below).</td>
+							</tr>
+						</tbody>
+					</table>
 					<p dir="auto">Some coins need an additional package, typically for their block hash
 						functions. For example, <a href="https://pypi.python.org/pypi/dash_hash" rel="nofollow">dash_hash</a> is required for DASH. Scrypt coins
 						require a Python interpreter compiled and/or linked with OpenSSL 1.1.0
@@ -491,7 +489,7 @@ $ openssl x509 -req -days 1825 -in server.csr -signkey server.key -out server.cr
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241019105630"></script>
+	<script src="js/app.min.js?_v=20241021111238"></script>
 </body>
 
 </html>
