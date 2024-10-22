@@ -7,7 +7,7 @@
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=1130px, initial-scale=1.0">
 	<meta name="author" content="electrum-xvg.org">
-	<link rel="stylesheet" href="css/style.min.css?_v=20241022132558">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241022141223">
 	<link rel="shortcut icon" type="image/x-icon" sizes="16x16" href="favicon.ico">
 	<link rel="icon" type="image/webp" sizes="16x16" href="img/favicon/16x16.webp">
 	<link rel="icon" type="image/webp" sizes="32x32" href="img/favicon/32x32.webp">
@@ -68,12 +68,12 @@
 			<section class="install-guide markdown-body entry-content container-lg">
 				<div class="install-guide__container">
 					<div class="markdown-heading" dir="auto">
-						<h1 tabindex="-1" class="heading-element" dir="auto">HOWTO</h1>
+						<h1 tabindex="-1" class="heading-element" dir="auto">Install Guide</h1>
 					</div>
 					<div class="markdown-heading" dir="auto">
 						<h2 tabindex="-1" class="heading-element" dir="auto">Prerequisites</h2>
 					</div>
-					<p dir="auto"><strong>ElectrumX</strong> should run on any flavour of unix. I have run it
+					<p dir="auto"><strong>ElectrumXVG</strong> should run on any flavour of unix. I have run it
 						successfully on MacOS and DragonFlyBSD. It won't run out-of-the-box
 						on Windows, but the changes required to make it do so should be
 						small - pull requests are welcome.</p>
@@ -87,7 +87,7 @@
 						<tbody>
 							<tr>
 								<td>Python3</td>
-								<td>ElectrumX uses asyncio. Python version &gt;= 3.8 is
+								<td>ElectrumXVG uses asyncio. Python version &gt;= 3.8 is
 									<strong>required</strong>.
 								</td>
 							</tr>
@@ -114,7 +114,7 @@
 						the blockchain with:</p>
 					<pre>bitcoind -reindex </pre>
 					<p dir="auto">which can take some time.</p>
-					<p dir="auto">While not a requirement for running ElectrumX, it is intended to be
+					<p dir="auto">While not a requirement for running ElectrumXVG, it is intended to be
 						run with supervisor software such as Daniel Bernstein's
 						<a href="http://cr.yp.to/daemontools.html" rel="nofollow">daemontools</a>, Gerrit Pape's <a href="http://smarden.org/runit/index.html" rel="nofollow">runit</a> package or <a href="#id2"><span id="user-content-id3">:command:`systemd`</span></a>.
 						These make administration of secure unix servers very easy, and I
@@ -123,13 +123,13 @@
 						<code>daemontools</code>; adapting to <code>runit</code> should be trivial for someone
 						used to either.
 					</p>
-					<p dir="auto">When building the database from the genesis block, ElectrumX has to
+					<p dir="auto">When building the database from the genesis block, ElectrumXVG has to
 						flush large quantities of data to disk and its DB. You will have a
 						better experience if the database directory is on an SSD than on an
 						HDD. Currently to around height 611,600 of the Bitcoin blockchain the
-						final size of the leveldb database, and other ElectrumX file metadata
+						final size of the leveldb database, and other ElectrumXVG file metadata
 						comes to just over 46.9GB (43.7 GiB). LevelDB needs a bit more for
-						brief periods, and the block chain is only getting longer, so I would
+						brief periods, and the blockchain is only getting longer, so I would
 						recommend having at least 70-80GB of free space before starting.</p>
 					<div class="markdown-heading" dir="auto">
 						<h2 tabindex="-1" class="heading-element" dir="auto">Database Engine</h2>
@@ -142,11 +142,11 @@
 					<ul dir="auto">
 						<li>
 							<p dir="auto"><a href="https://plyvel.readthedocs.io/en/latest/installation.html" rel="nofollow">plyvel</a> for LevelDB.</p>
-							<p dir="auto">Included as part of a regular pip or <code>setup.py</code> installation of ElectrumX.</p>
+							<p dir="auto">Included as part of a regular pip or <code>setup.py</code> installation of ElectrumXVG.</p>
 						</li>
 						<li>
 							<p dir="auto"><a href="https://pypi.python.org/pypi/python-rocksdb" rel="nofollow">python-rocksdb</a> for RocksDB</p>
-							<p dir="auto"><code>pip3 install python-rocksdb</code> or use the rocksdb extra install option to ElectrumX.</p>
+							<p dir="auto"><code>pip3 install python-rocksdb</code> or use the rocksdb extra install option to ElectrumXVG.</p>
 						</li>
 						<li>
 							<p dir="auto"><a href="http://pyrocksdb.readthedocs.io/en/v0.4/installation.html" rel="nofollow">pyrocksdb</a> for an unmaintained version that doesn't work with recent releases of RocksDB</p>
@@ -157,8 +157,8 @@
 					</div>
 					<p dir="auto">Install the prerequisites above.</p>
 					<p dir="auto">Check out the code from Github:</p>
-					<pre>git clone https://github.com/spesmilo/electrumx.git 
-cd electrumx</pre>
+					<pre>git clone https://github.com/spesmilo/electrumxvg.git 
+cd electrumxvg</pre>
 					<p dir="auto">You can install with:</p>
 					<pre>pip3 install .</pre>
 					<p dir="auto">There are many extra Python dependencies available to fit the needs of your
@@ -171,25 +171,25 @@ cd electrumx</pre>
 						your own is probably adequate unless paranoid. The paranoid might
 						also want to create another user account for the daemontools logging
 						process. The sample scripts and these instructions assume it is all
-						under one account which I have called <code>electrumx</code>.</p>
+						under one account which I have called <code>electrumxvg</code>.</p>
 					<p dir="auto">Next create a directory where the database will be stored and make it
-						writeable by the <code>electrumx</code> account. I recommend this directory
+						writable by the <code>electrumxvg</code> account. I recommend this directory
 						live on an SSD:</p>
 					<pre>mkdir /path/to/db_directory
-chown electrumx /path/to/db_directory</pre>
+chown electrumxvg /path/to/db_directory</pre>
 					<div class="markdown-heading" dir="auto">
 						<h3 tabindex="-1" class="heading-element" dir="auto">Process limits</h3>
 					</div>
-					<p dir="auto">You must ensure the ElectrumX process has a large open file limit.
+					<p dir="auto">You must ensure the ElectrumXVG process has a large open file limit.
 						During sync it should not need more than about 1,024 open files. When
 						serving it will use approximately 256 for LevelDB plus the number of
 						incoming connections. It is not unusual to have 1,000 to 2,000
 						connections being served, so I suggest you set your open files limit
 						to at least 2,500.</p>
-					<p dir="auto">Note that setting the limit in your shell does <em>NOT</em> affect ElectrumX
-						unless you are invoking ElectrumX directly from your shell. If you
+					<p dir="auto">Note that setting the limit in your shell does <em>NOT</em> affect ElectrumXVG
+						unless you are invoking ElectrumXVG directly from your shell. If you
 						are using <a href="#id4"><span id="user-content-id5">:command:`systemd`</span></a>, you need to set it in the
-						<a href="#id6"><span id="user-content-id7">:file:`.service`</span></a> file (see <a href="https://github.com/spesmilo/electrumx/blob/master/contrib/systemd/electrumx.service">contrib/systemd/electrumx.service</a>).
+						<a href="#id6"><span id="user-content-id7">:file:`.service`</span></a> file (see <a href="https://github.com/spesmilo/electrumxvg/blob/master/contrib/systemd/electrumxvg.service">contrib/systemd/electrumxvg.service</a>).
 					</p>
 					<div class="markdown-heading" dir="auto">
 						<h3 tabindex="-1" class="heading-element" dir="auto">Using daemontools</h3>
@@ -197,43 +197,51 @@ chown electrumx /path/to/db_directory</pre>
 					<p dir="auto">Next create a daemontools service directory; this only holds symlinks
 						(see daemontools documentation). The <a href="#id8"><span id="user-content-id9">:command:`svscan`</span></a> program will
 						ensure the servers in the directory are running by launching a
-						<a href="#id10"><span id="user-content-id11">:command:`supervise`</span></a> supervisor for the server and another for its
-						logging process. You can run <a href="#id12"><span id="user-content-id13">:command:`svscan`</span></a> under the <em>electrumx</em>
-						account if that is the only one involved (server and logger) otherwise
-						it will need to run as root so that the user can be switched to
-						electrumx.
+						<a href="#id10"><span id="user-content-id11">:command:`run`</span></a> script when the service is down:
 					</p>
-					<p dir="auto">Assuming this directory is called <a href="#id14"><span id="user-content-id15">:file:`service`</span></a>, you would do one
-						of:</p>
-					<pre>mkdir /service       # If running svscan as root
-mkdir ~/service      # As electrumx if running svscan as that a/c</pre>
-					<p dir="auto">Next create a directory to hold the scripts that the
-						<a href="#id16"><span id="user-content-id17">:command:`supervise`</span></a> process spawned by <a href="#id18"><span id="user-content-id19">:command:`svscan`</span></a> will run -
-						this directory must be readable by the <a href="#id20"><span id="user-content-id21">:command:`svscan`</span></a> process.
-						Suppose this directory is called <a href="#id22"><span id="user-content-id23">:file:`scripts`</span></a>, you might do:
+					<pre>mkdir /etc/service/electrumxvg
+touch /etc/service/electrumxvg/run
+chmod 755 /etc/service/electrumxvg/run
+				  </pre>
+					<p dir="auto">Next create a run script. The command line arguments <code>--db-directory</code>,
+						<code>--host</code>, and <code>--port</code> are mandatory:
 					</p>
-					<pre>mkdir -p ~/scripts/electrumx</pre>
-					<p dir="auto">Then copy the all sample scripts from the ElectrumX source tree there:</p>
-					<pre>cp -R /path/to/repo/electrumx/contrib/daemontools ~/scripts/electrumx</pre>
-					<p dir="auto">This copies 3 things: the top level server run script, a <a href="#id24"><span id="user-content-id25">:file:`log/`</span></a>
-						directory with the logger <a href="#id26"><span id="user-content-id27">:command:`run`</span></a> script, an <a href="#id28"><span id="user-content-id29">:file:`env/`</span></a>
-						directory.</p>
-					<p dir="auto">You need to configure the <a href="#id30"><span id="user-content-id31">:ref:`environment variables &lt;environment&gt;`</span></a>
-						under <a href="#id32"><span id="user-content-id33">:file:`env/`</span></a> to your setup. ElectrumX server currently takes no
-						command line arguments; all of its configuration is taken from its
-						environment which is set up according to <a href="#id34"><span id="user-content-id35">:file:`env/`</span></a> directory (see
-						<a href="#id36"><span id="user-content-id37">:manpage:`envdir`</span></a> man page). Finally you need to change the
-						<a href="#id38"><span id="user-content-id39">:command:`log/run`</span></a> script to use the directory where you want the logs
-						to be written by multilog. The directory need not exist as
-						<a href="#id40"><span id="user-content-id41">:command:`multilog`</span></a> will create it, but its parent directory must
-						exist.
+					<pre>#!/bin/sh exec /usr/local/bin/electrumxvg --db-directory /path/to/db_directory --host 0.0.0.0 --port 50001</pre>
+					<p dir="auto">If you want to specify the default RPC interface, you can add:</p>
+					<pre>--rpc-user user --rpc-password password</pre>
+					<p dir="auto">Next make the run script executable:</p>
+					<pre>chmod +x /etc/service/electrumxvg/run</pre>
+					<div class="markdown-heading" dir="auto">
+						<h2 tabindex="-1" class="heading-element" dir="auto">Configuration</h2>
+					</div>
+					<p dir="auto">The default configuration is read from:</p>
+					<pre>~/.electrumxvg/electrumxvg.conf</pre>
+					<p dir="auto">Sample configuration:</p>
+					<pre>DB_DIRECTORY=/path/to/db_directory
+COIN=verge
+DAEMON_URL=http://user:password@127.0.0.1:8332
+SSL_CERTFILE=/etc/ssl/certs/electrumxvg.cert
+SSL_KEYFILE=/etc/ssl/private/electrumxvg.key
+TCP_PORT=50001
+SSL_PORT=50002</pre>
+					<p dir="auto">Make sure to set your <code>DAEMON_URL</code> and <code>DB_DIRECTORY</code>.
+						The ports are the defaults; you can change them if you wish. The default
+						SSL ports are 50002. You can disable SSL with:</p>
+					<pre>SSL_PORT=0</pre>
+					<p dir="auto">In your local installation, there will be more options to set; see the
+						<a href="#configuration">Configuration</a> section below.
 					</p>
-					<p dir="auto">Now start the <a href="#id42"><span id="user-content-id43">:command:`svscan`</span></a> process. This will not do much as the
-						service directory is still empty:</p>
-					<pre>svscan ~/service &amp; disown</pre>
-					<p dir="auto">svscan is now waiting for services to be added to the directory:</p>
-					<pre>cd ~/service
-ln -s ~/scripts/electrumx electrumx</pre>
+					<div class="markdown-heading" dir="auto">
+						<h2 tabindex="-1" class="heading-element" dir="auto">Run</h2>
+					</div>
+					<p dir="auto">If you don't want to use daemontools, you can run ElectrumXVG directly.</p>
+					<p dir="auto">Make sure to activate the Python environment if you created a virtual
+						environment:</p>
+					<pre>source venv/bin/activate</pre>
+					<p dir="auto">Then run:</p>
+					<pre>python3 -m electrumxvg.server</pre>
+					<p dir="auto">You can pass command-line arguments as described in the <a href="#command-line-options">Command Line Options</a> section.</p>
+
 					<p dir="auto">Creating the symlink will kick off the server process almost immediately.
 						You can see its logs with:</p>
 					<pre>tail -F /path/to/log/dir/current | tai64nlocal</pre>
@@ -241,27 +249,27 @@ ln -s ~/scripts/electrumx electrumx</pre>
 						<h3 tabindex="-1" class="heading-element" dir="auto">Using systemd</h3>
 					</div>
 					<p dir="auto">This repository contains a sample systemd unit file that you can use
-						to setup ElectrumX with systemd. Simply copy it to
+						to setup ElectrumXVG with systemd. Simply copy it to
 						<a href="#id44"><span id="user-content-id45">:file:`/etc/systemd/system`</span></a>:
 					</p>
-					<pre>cp contrib/systemd/electrumx.service /etc/systemd/system/</pre>
+					<pre>cp contrib/systemd/electrumxvg.service /etc/systemd/system/</pre>
 					<p dir="auto">The sample unit file assumes that the repository is located at
-						<a href="#id46"><span id="user-content-id47">:file:`/home/electrumx/electrumx`</span></a>. If that differs on your system, you
+						<a href="#id46"><span id="user-content-id47">:file:`/home/electrumxvg/electrumxvg`</span></a>. If that differs on your system, you
 						need to change the unit file accordingly.
 					</p>
 					<p dir="auto">You need to set a few <a href="#id48"><span id="user-content-id49">:ref:`environment variables &lt;environment&gt;`</span></a> in
-						<a href="#id50"><span id="user-content-id51">:file:`/etc/electrumx.conf`</span></a>.
+						<a href="#id50"><span id="user-content-id51">:file:`/etc/electrumxvg.conf`</span></a>.
 					</p>
-					<p dir="auto">Now you can start ElectrumX using <a href="#id52"><span id="user-content-id53">:command:`systemctl`</span></a>:</p>
-					<pre>systemctl start electrumx</pre>
+					<p dir="auto">Now you can start ElectrumXVG using <a href="#id52"><span id="user-content-id53">:command:`systemctl`</span></a>:</p>
+					<pre>systemctl start electrumxvg</pre>
 					<p dir="auto">You can use <a href="#id54"><span id="user-content-id55">:command:`journalctl`</span></a> to check the log output:</p>
-					<pre>journalctl -u electrumx -f</pre>
-					<p dir="auto">Once configured you may want to start ElectrumX at boot:</p>
-					<pre>systemctl enable electrumx</pre>
+					<pre>journalctl -u electrumxvg -f</pre>
+					<p dir="auto">Once configured you may want to start ElectrumXVG at boot:</p>
+					<pre>systemctl enable electrumxvg</pre>
 					<div dir="auto">
 						<p dir="auto">Warning</p>
 						<p dir="auto">systemd is aggressive in forcibly shutting down
-							processes. Depending on your hardware, ElectrumX can need several
+							processes. Depending on your hardware, ElectrumXVG can need several
 							minutes to flush cached data to disk during initial sync. You
 							should set TimeoutStopSec to <em>at least</em> 10 mins in your
 							<a href="#id56"><span id="user-content-id57">:file:`.service`</span></a> file.
@@ -272,16 +280,16 @@ ln -s ~/scripts/electrumx electrumx</pre>
 					</div>
 					<p dir="auto">To install on the Raspberry Pi 3 you will need to update to the
 						<code>stretch</code> distribution. See the full procedure in
-						<a href="https://github.com/spesmilo/electrumx/blob/master/contrib/raspberrypi3/install_electrumx.sh">contrib/raspberrypi3/install_electrumx.sh</a>.
+						<a href="https://github.com/spesmilo/electrumx/blob/master/contrib/raspberrypi3/install_electrumxvg.sh">contrib/raspberrypi3/install_electrumxvg.sh</a>.
 					</p>
-					<p dir="auto">See also <a href="https://github.com/spesmilo/electrumx/blob/master/contrib/raspberrypi3/run_electrumx.sh">contrib/raspberrypi3/run_electrumx.sh</a> for an easy way to
-						configure and launch electrumx.</p>
+					<p dir="auto">See also <a href="https://github.com/spesmilo/electrumx/blob/master/contrib/raspberrypi3/run_electrumxvg.sh">contrib/raspberrypi3/run_electrumxvg.sh</a> for an easy way to
+						configure and launch electrumxvg.</p>
 					<div class="markdown-heading" dir="auto">
 						<h2 tabindex="-1" class="heading-element" dir="auto">Sync Progress</h2>
 					</div>
 					<p dir="auto">Time taken to index the blockchain depends on your hardware of course.
 						As Python is single-threaded most of the time only 1 core is kept
-						busy. ElectrumX uses Python's <a href="#id58"><span id="user-content-id59">:mod:`asyncio`</span></a> to prefill a cache of
+						busy. ElectrumXVG uses Python's <a href="#id58"><span id="user-content-id59">:mod:`asyncio`</span></a> to prefill a cache of
 						future blocks asynchronously to keep the CPU busy processing the chain
 						without pausing.</p>
 					<p dir="auto">Consequently there will probably be only a minor boost in performance
@@ -289,7 +297,7 @@ ln -s ~/scripts/electrumx electrumx</pre>
 						the daemon on a <em>separate</em> machine so the machine doing the indexing
 						has its caches and disk I/O tuned to that task only.</p>
 					<p dir="auto">The <a href="#id60"><span id="user-content-id61">:envvar:`CACHE_MB`</span></a> environment variable controls the total cache
-						size ElectrumX uses; see <a href="#id62"><span id="user-content-id63">:ref:`here &lt;CACHE&gt;`</span></a> for caveats.</p>
+						size ElectrumXVG uses; see <a href="#id62"><span id="user-content-id63">:ref:`here &lt;CACHE&gt;`</span></a> for caveats.</p>
 					<p dir="auto">Here is my experience with the codebase of early 2017 (the current
 						codebase is faster), to given heights and rough wall-time. The period
 						from heights 363,000 to 378,000 is the most sluggish:</p>
@@ -312,133 +320,38 @@ ln -s ~/scripts/electrumx electrumx</pre>
 						faster.</p>
 					<div dir="auto">
 						<p dir="auto">Note</p>
-						<p dir="auto">ElectrumX will not serve normal client connections until it
+						<p dir="auto">ElectrumXVG will not serve normal client connections until it
 							has fully synchronized and caught up with your daemon.
 							However LocalRPC connections are served at all times.</p>
 					</div>
 					<div class="markdown-heading" dir="auto">
-						<h2 tabindex="-1" class="heading-element" dir="auto">Terminating ElectrumX</h2>
+						<h2 tabindex="-1" class="heading-element" dir="auto">Terminating ElectrumXVG</h2>
 					</div>
 					<p dir="auto">The preferred way to terminate the server process is to send it the
 						<code>stop</code> RPC command:
 					</p>
-					<pre>electrumx_rpc stop</pre>
+					<pre>electrumxvg_rpc stop</pre>
 					<p dir="auto">or alternatively on Unix the <code>INT</code> or <code>TERM</code> signals. For a
 						daemontools supervised process this can be done by bringing it down
 						like so:</p>
-					<pre>svc -d ~/service/electrumx</pre>
-					<p dir="auto">ElectrumX will note receipt of the signals in the logs, and ensure the
+					<pre>svc -d ~/service/electrumxvg</pre>
+					<p dir="auto">ElectrumXVG will note receipt of the signals in the logs, and ensure the
 						block chain index is flushed to disk before terminating. You should
 						be patient as flushing data to disk can take many minutes.</p>
-					<p dir="auto">ElectrumX uses the transaction functionality, with fsync enabled, of
+					<p dir="auto">ElectrumXVG uses the transaction functionality, with fsync enabled, of
 						the databases. I have written it with the intent that, to the extent
 						the atomicity guarantees are upheld by the DB software, the operating
 						system, and the hardware, the database should not get corrupted even
-						if the ElectrumX process if forcibly killed or there is loss of power.
+						if the ElectrumXVG process is forcibly killed or there is loss of power.
 						The worst case should be having to restart indexing from the most
 						recent UTXO flush.</p>
 					<p dir="auto">Once the process has terminated, you can start it up again with:</p>
-					<pre>svc -u ~/service/electrumx</pre>
+					<pre>svc -u ~/service/electrumxvg</pre>
 					<p dir="auto">You can see the status of a running service with:</p>
-					<pre>svstat ~/service/electrumx</pre>
+					<pre>svstat ~/service/electrumxvg</pre>
 					<p dir="auto"><a href="#id68"><span id="user-content-id69">:command:`svscan`</span></a> can of course handle multiple services
 						simultaneously from the same service directory, such as a testnet or
-						altcoin server. See the man pages of these various commands for more
-						information.</p>
-					<div class="markdown-heading" dir="auto">
-						<h2 tabindex="-1" class="heading-element" dir="auto">Understanding the Logs</h2>
-					</div>
-					<p dir="auto">You can see the logs usefully like so:</p>
-					<pre>tail -F /path/to/log/dir/current | tai64nlocal</pre>
-					<p dir="auto">Here is typical log output on startup:</p>
-					<pre>INFO:BlockProcessor:switching current directory to /crucial/server-good
-INFO:BlockProcessor:using leveldb for DB backend
-INFO:BlockProcessor:created new database
-INFO:BlockProcessor:creating metadata diretcory
-INFO:BlockProcessor:software version: ElectrumX 0.10.2
-INFO:BlockProcessor:DB version: 5
-INFO:BlockProcessor:coin: Bitcoin
-INFO:BlockProcessor:network: mainnet
-INFO:BlockProcessor:height: -1
-INFO:BlockProcessor:tip: 0000000000000000000000000000000000000000000000000000000000000000
-INFO:BlockProcessor:tx count: 0
-INFO:BlockProcessor:sync time so far: 0d 00h 00m 00s
-INFO:BlockProcessor:reorg limit is 200 blocks
-INFO:Daemon:daemon at 192.168.0.2:8332/
-INFO:BlockProcessor:flushing DB cache at 1,200 MB
-INFO:Controller:RPC server listening on localhost:8000
-INFO:Prefetcher:catching up to daemon height 447,187...
-INFO:Prefetcher:verified genesis block with hash 000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f
-INFO:BlockProcessor:our height: 9 daemon: 447,187 UTXOs 0MB hist 0MB
-INFO:BlockProcessor:our height: 52,509 daemon: 447,187 UTXOs 9MB hist 14MB
-INFO:BlockProcessor:our height: 85,009 daemon: 447,187 UTXOs 12MB hist 31MB
-INFO:BlockProcessor:our height: 102,384 daemon: 447,187 UTXOs 15MB hist 47MB
-[...]
-INFO:BlockProcessor:our height: 133,375 daemon: 447,187 UTXOs 80MB hist 222MB
-INFO:BlockProcessor:our height: 134,692 daemon: 447,187 UTXOs 96MB hist 250MB
-INFO:BlockProcessor:flushed to FS in 0.7s
-INFO:BlockProcessor:flushed history in 16.3s for 1,124,512 addrs
-INFO:BlockProcessor:flush #1 took 18.7s.  Height 134,692 txs: 941,963
-INFO:BlockProcessor:tx/sec since genesis: 2,399, since last flush: 2,400
-INFO:BlockProcessor:sync time: 0d 00h 06m 32s  ETA: 1d 13h 03m 42s</pre>
-					<p dir="auto">Under normal operation these cache stats repeat once or twice a
-						minute. UTXO flushes can take several minutes and look like this:</p>
-					<pre>INFO:BlockProcessor:our height: 378,745 daemon: 447,332 UTXOs 1,013MB hist 184MB
-INFO:BlockProcessor:our height: 378,787 daemon: 447,332 UTXOs 1,014MB hist 194MB
-INFO:BlockProcessor:flushed to FS in 0.3s
-INFO:BlockProcessor:flushed history in 13.4s for 934,933 addrs
-INFO:BlockProcessor:flushed 6,403 blocks with 5,879,440 txs, 2,920,524 UTXO adds, 3,646,572 spends in 93.1s, committing...
-INFO:BlockProcessor:flush #120 took 226.4s.  Height 378,787 txs: 87,695,588
-INFO:BlockProcessor:tx/sec since genesis: 1,280, since last flush: 359
-INFO:BlockProcessor:sync t ime: 0d 19h 01m 06s  ETA: 3d 21h 17m 52s
-INFO:BlockProcessor:our height: 378,812 daemon: 447,334 UTXOs 10MB hist 10MB</pre>
-					<p dir="auto">The ETA shown is just a rough guide and in the short term can be quite
-						volatile. It tends to be a little optimistic at first; once you get
-						to height 280,000 is should be fairly accurate.</p>
-					<div class="markdown-heading" dir="auto">
-						<h2 tabindex="-1" class="heading-element" dir="auto">Creating a self-signed SSL certificate</h2>
-					</div>
-					<p dir="auto">These instructions are based on those of the <code>electrum-server</code>
-						documentation.</p>
-					<p dir="auto">To run an SSL server you need to generate a self-signed certificate
-						using openssl. Alternatively you could not set <a href="#id70"><span id="user-content-id71">:envvar:`SSL_PORT`</span></a> in
-						the environment and not serve over SSL, but this is not recommended.</p>
-					<p dir="auto">Use the sample code below to create a self-signed cert with a
-						recommended validity of 5 years. You may supply any information for
-						your sign request to identify your server. They are not currently
-						checked by the client except for the validity date. When asked for a
-						challenge password just leave it empty and press enter:</p>
-					<pre>$ openssl genrsa -out server.key 2048
-$ openssl req -new -key server.key -out server.csr
-...
-Country Name (2 letter code) [AU]:US
-State or Province Name (full name) [Some-State]:California
-Common Name (eg, YOUR name) []: electrum-server.tld
-...
-A challenge password []:
-...
-$ openssl x509 -req -days 1825 -in server.csr -signkey server.key -out server.crt</pre>
-					<p dir="auto">The <a href="#id72"><span id="user-content-id73">:file:`server.crt`</span></a> file goes in <a href="#id74"><span id="user-content-id75">:envvar:`SSL_CERTFILE`</span></a> and
-						<a href="#id76"><span id="user-content-id77">:file:`server.key`</span></a> in <a href="#id78"><span id="user-content-id79">:envvar:`SSL_KEYFILE`</span></a> in the server process's
-						environment.
-					</p>
-					<p dir="auto">Starting with Electrum 1.9, the client will learn and locally cache
-						the SSL certificate for your server upon the first request to prevent
-						man-in-the middle attacks for all further connections.</p>
-					<p dir="auto">If your certificate is lost or expires on the server side, you will
-						need to run your server with a different server name and a new
-						certificate. Therefore it's a good idea to make an offline backup
-						copy of your certificate and key in case you need to restore them.</p>
-					<div class="markdown-heading" dir="auto">
-						<h2 tabindex="-1" class="heading-element" dir="auto">Running on a privileged port</h2>
-					</div>
-					<p dir="auto">You may choose to run electrumx on a different port than 50001
-						/ 50002. If you choose a privileged port ( &lt; 1024 ) it makes sense to
-						make use of a iptables NAT rule.</p>
-					<p dir="auto">An example, which will forward Port 110 to the internal port 50002 follows:</p>
-					<pre>iptables -t nat -A PREROUTING -p tcp --dport 110 -j DNAT --to-destination 127.0.0.1:50002</pre>
-					<p dir="auto">You can then set the port as follows and advertise the service externally on the privileged port:</p>
-					<pre>REPORT_SSL_PORT=110</pre>
+						for testing a fork.</p>
 				</div>
 			</section>
 		</main>
@@ -451,7 +364,7 @@ $ openssl x509 -req -days 1825 -in server.csr -signkey server.key -out server.cr
 						</a>
 						<div class="main-footer__text">
 							<p>
-								Electrum Verge Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore!
+								Electrum Verge — A wallet designed for everyday transactions. Simple!
 							</p>
 						</div>
 					</div>
@@ -489,7 +402,7 @@ $ openssl x509 -req -days 1825 -in server.csr -signkey server.key -out server.cr
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20241022132558"></script>
+	<script src="js/app.min.js?_v=20241022141223"></script>
 </body>
 
 </html>
