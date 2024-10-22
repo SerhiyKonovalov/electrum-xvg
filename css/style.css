@@ -950,7 +950,7 @@ summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: .625rem;
+  gap: 1.25rem;
   font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.4;
