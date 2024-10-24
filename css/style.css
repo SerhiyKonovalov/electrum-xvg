@@ -350,6 +350,15 @@ body::-webkit-scrollbar-thumb:hover {
   object-fit: cover;
   pointer-events: none
 }
+.footer__bg-image::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.7)
+}
 .main-footer {
   display: grid;
   align-items: end;
@@ -629,6 +638,15 @@ body::-webkit-scrollbar-thumb:hover {
   -o-object-fit: cover;
   object-fit: cover;
   pointer-events: none
+}
+.hero__bg-image::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.65)
 }
 .main-slider {
   padding-block: 5.625rem
